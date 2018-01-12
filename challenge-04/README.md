@@ -7,7 +7,9 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+let isThuthy = function(a) {
+	return a ? "true" : "false";
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 ?
@@ -29,18 +31,27 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+let carro = {
+	marca: "honda",
+	modelo: "fit",
+	placa: "ekn5228",
+	ano: 2009,
+	cor: "verde",
+	quantasPortas: 4,
+	assentos: 5,
+	quantidadedePessoas: 0
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = function(novaCor) { this.cor = novaCor; };
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function() { return this.cor; };
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
@@ -75,7 +86,15 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionar = function(pessoas) {
+	if( carro.quantidadedePessoas === 5 ) {
+		return "O carro já está lotado!";
+	} else if( carro.quantidadedePessoas + pessoas > 5 ) {
+		return (5-quantidadedePessoas === 1) ? "Só cabem mais " + (5 - carro.quantidadedePessoas) + " pessoa!" : "Só cabem mais " + (5 - carro.quantidadedePessoas) + " pessoas!";
+	} 
+	carro.quantidadedePessoas += pessoas;
+	return "Já temos " + carro.quantidadedePessoas +" pessoas no carro!";
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
